@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<title>
+	工业设计
+	</title>
+	<meta http-equiv="x-ua-compatible" content="ie=11" />
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+	<meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+	<meta name="Design Corp" content="Perfect DNB" />
+	<meta name="robots" content="all" />
+	<meta name="Keywords" content="工业设计" />
+	<meta name="Description" content="工业设计" />
+	
+	<include file="Public/head" />
+
+
+</head>
+
+<body style="background: #F9F9F9">
+<include file="Public/header" />
+
+	<div class="bg-wrap mt10">
+		<div class="need-left">
+			<div class="box detail-box">
+				<div class="article-head">
+					<div class="title-head">
+						<h2 class="no-margin pb10"><{$title}></h2>
+					</div>
+					<div class="title-foot">
+						<span>浏览：<{$read}></span>
+						<span> 发布日期：<{$time}></span> 
+						<span> 分类：<{$cate}></span>
+					</div>
+				</div>
+				<div class="article-text">
+					<{$content}>
+				</div>
+				<div class="da_word"></div>
+			</div>
+			<div class="box cmt-box">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a class="cmt-border" href="" data-toggle='tab'>评论</a>
+					</li>			
+				</ul>
+				<div class="cmt-wrap" id="cmt-wrap">
+					<volist name="commentList" id="fCmt">
+						<div class="cmt-item review-item">
+							<div class="fl avatar">
+								<img class="img-responsive" alt="Responsive image" src="__PUBLIC__/images/companylogo.jpg" width="44px">
+							</div>
+							<div class="cmt-cnt" id="cnt<{$fCmt.id}>">
+								<div class="cmt-hd">
+									<span class="text-primary"><{$fCmt.user}></span>
+									<span class="pl10"><{$fCmt.time}></span>
+									<a class="fr" href="javascript:;" user="<{$fCmt.user}>" reply="<{$fCmt.id}>">回复<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>
+								</div>
+								<div class="cmt-txt">
+									<p><{$fCmt.content}></p>
+								</div>
+							<volist name="fCmt.child" id="sCmt">
+								<div class="cmt-item reply-item">
+									<div class="fl avatar">
+										<img class="img-responsive" alt="Responsive image" src="__PUBLIC__/images/companylogo.jpg" width="44px">
+									</div>
+									<div class="cmt-cnt" id="cnt<{$sCmt.id}>">
+										<div class="cmt-hd">
+											<span class="text-primary"><{$sCmt.user}></span>
+											<span>回复</span>
+											<span class="text-primary"><{$sCmt.getter}></span>
+											<span class="pl10"><{$sCmt.time}></span>
+											<a class="fr" href="javascript:;" user="<{$sCmt.user}>" reply="<{$fCmt.id}>">回复<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>
+										</div>
+										<div class="cmt-txt">
+											<p><{$sCmt.content}></p>
+										</div>
+									</div>
+								</div>
+							</volist>
+							</div>
+						</div>
+					</volist>
+					<div id="reply-form" class="cmt-form">
+						<div class="fl avatar">
+							<img class="img-responsive" alt="Responsive image" src="__PUBLIC__/images/companylogo.jpg" width="50px" />
+						</div>
+						<div class="mt5 pl50">
+							<div class="form-group">
+								<label class="sr-only" for="comment">comment</label>
+								<input type="text" class="form-control cmt-width" id="comment" user="<{$user}>" pid="0" placeholder="我也来说两句..">
+							</div>
+							<button id="cmt-btn" class="btn btn-danger ml15">评论</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="need-right">
+			<div class="box promulgator">
+				<div class="avatar">
+					<img class="img-responsive" alt="Responsive image" src="__PUBLIC__/images/companylogo.jpg" width="44px">
+				</div>
+				<div class="pro-name black">
+					<span>发布者：<{$user}></span>
+				</div>
+				<span>发布时间：<{$time}></span>
+			</div>
+			<div class="sidebar">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="glyphicon glyphicon-pencil"></span>
+						热门设计<a href="#" class="text-muted fr">>></a>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">电热开水瓶设计</a></li>
+						<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">婴儿冲奶机设计开发</a></li>
+						<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">超强吸力吸尘器</a></li>
+						<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">亨博高端电商爆款电烧烤炉</a></li>
+						<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">高档蒸汽挂烫机</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<include file="Public/footer" />
+	<script>
+	$("a").click(function(event){
+		if($(this).attr("reply")!==undefined){
+		    var reply = $(this).attr("reply");
+			var user = $(this).attr("user");
+			var att = "#cnt" + reply;
+			$(att).append($("#reply-form"));
+			$("#comment").focus();
+			$("#comment").attr("user",user);
+			$("#comment").attr("pid",reply);
+			event.stopPropagation();
+		}
+	})
+	$("#reply-form").click(function(event){
+		event.stopPropagation();
+	});
+	$(document).click(function(){
+		$("#cmt-wrap").append($("#reply-form"));
+		$("#comment").attr("user","<{$user}>");
+		$("#comment").attr("pid","0");
+	});
+	$("#cmt-btn").click(function(){
+		$("#comment").text("提交中..");
+		$.post("<{:U('Need/sendCmt')}>",
+			{
+			user: "<{$userList}>",
+			getter:$("#comment").attr("user"),
+			pid : $("#comment").attr("pid"),
+			cnt : $("#comment").val(),
+			needid : <{$id}>
+			},
+			function(data){
+				switch(data){
+					case 0:layer.msg('请先登录！'); break;
+					case 1:layer.msg('请用正确的语言进行回复！'); break;
+					case 2: 
+						layer.msg('回复成功');
+						location.reload();
+						break;
+				}
+				
+			}
+		)
+	})
+	</script>
+
+	</body>
+</html>

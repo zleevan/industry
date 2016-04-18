@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>{$current['title']}-{$Think.CONFIG.title}</title>
+
+		<meta name="keywords" content="{$Think.CONFIG.keywords}" />
+		<meta name="description" content="{$Think.CONFIG.description}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<include file="Public/head" />
+   </head>
+
+	<body class="no-skin">
+		<include file="Public/header" />
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<include file="Public/sidebar" />
+			<div class="main-content">
+				<div class="main-content-inner">
+					<!-- #section:basics/content.breadcrumbs -->
+					<include file="Public/breadcrumbs" />
+
+					<!-- /section:basics/content.breadcrumbs -->
+					<div class="page-content">
+						<include file="Public/set" />
+						<div class="publish-wrap">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label for="title" class="col-sm-5 control-label">发布新需求</label>
+								</div>
+								<div class="form-group">
+									<label for="title" class="col-sm-2 control-label">标题：</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" id="title" name="title" placeholder="请输入标题，不超于20字">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="title" class="col-sm-2 control-label">分类：</label>
+									<div class="col-sm-10">
+									<select id="select-list" name="select-list" class="select-list">
+										<option value="0">请选择</option>
+										<volist name="cateList " id="cList">
+											<option value="{$cList.id}">{$cList.name}</option>
+										</volist>	
+									</select>
+									<input type="hidden" id="selValue" name="selValue" value="0"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="title" class="col-sm-2 control-label">内容：</label>
+									<div class="col-sm-5">
+										<div class="tools">
+											<a id="bold" title="加粗"><span class="glyphicon glyphicon-bold" aria-hidden="true"></span></a>
+											<a id="link" title="链接"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+											<a id="picture" title="图片"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a>
+										</div>
+										<textarea id="publish-cnt" name="publish-cnt" class="form-control" rows="10"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-2"></div>
+									<div class="col-sm-10">
+										<button type="button" id="bbs-submit" class="btn btn-primary">发布</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.main-content -->
+			<include file="Public/footer" />
+			
+		</div><!-- /.main-container -->
+
+		<include file="Public/footerjs" />
+		<script>
+		$("#bold").click(function(){
+			var text =  $("#publish-cnt").val();
+			$("#publish-cnt").val(text+'[b][/b]');
+		});
+		$("#link").click(function(){
+			var text =  $("#publish-cnt").val();
+			$("#publish-cnt").val(text+"[url][/url]");
+		});
+		$("#bbs-submit").click(function(){
+		$.post("{:U('Admin/Need/checkAdd')}",
+			{
+				title:$("#title").val(),
+				selectList:$("#select-list").val(),
+				publishCnt:$("#publish-cnt").val()
+			},
+			function(flag){
+				switch(flag){
+					case 1:layer.tips('标题不能为空！', '#title', {tips: 2});break;
+					case 2:layer.tips('请选择分类！', '#select-list', {tips: 2});break;
+					case 3:layer.tips('写点什么吧！', '#publish-cnt', {tips: 1});break;
+					case 4:location.href = "{:U('Admin/Need/need')}";break;
+				}
+			}
+		
+			);
+		})
+	</script>
+	</body>
+</html>

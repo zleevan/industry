@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<title>
+	工业设计
+	</title>
+	<meta http-equiv="x-ua-compatible" content="ie=11" />
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+	<meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+	<meta name="Design Corp" content="Perfect DNB" />
+	<meta name="robots" content="all" />
+	<meta name="Keywords" content="工业设计" />
+	<meta name="Description" content="工业设计" />
+	
+	<include file="Public/head" />
+
+
+</head>
+
+<body>
+<include file="Public/header" />
+	<a href="<{$flash.url}>"> <img src="__ROOT__<{$flash.pic}>" class="img-responsive" alt="Responsive image"/></a>
+	<div class="bg-wrap mt10">
+	<foreach name="data" item="data">
+		<div class="product">
+			<div class="product-img">
+                <a href="<{:U('Home/Design/info/aid/'.$data['aid'])}>"><img src="__ROOT__<{$data.thumbnail}>" class="img-responsive-thumbnail"/></a>
+			</div>
+			<div class="product-brief">
+				<div class="mt10">
+					<a href="<{:U('Home/Design/info/aid/'.$data['aid'])}>" class="mr20"><{$data.title}></a>
+					<span class="glyphicon glyphicon-eye-open mr5"></span>8888
+				</div>
+			</div>
+		</div>
+	</foreach>
+	</div>
+<include file="Public/footer" />
+</body>
+</html>

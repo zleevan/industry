@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<title>
+	<{$data.title}>
+	</title>
+	<meta http-equiv="x-ua-compatible" content="ie=11" />
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+	<meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+	<meta name="Design Corp" content="Perfect DNB" />
+	<meta name="robots" content="all" />
+	<meta name="Keywords" content="<{$data.title}>" />
+	<meta name="Description" content="<{$data.title}>" />
+	
+	<include file="Public/head" />
+
+
+</head>
+
+<body>
+<include file="Public/header" />
+	<div class="bg-wrap mt30">
+	
+		<div class="goods-head">
+			<div class="goods-detail">
+				<img src="__ROOT__<{$data.thumbnail}>" class="img-responsive-thumbnail" alt="Responsive image"/>
+			</div>
+			<div class="gd-txt">
+				<h3 class="gd-name"><{$data.title}></h3>
+				<a href="<{:U('Home/Company/info')}>">大学生创业有限公司</a>
+				<span ><{$data['t']|date="Y-m-d H:i:s",###}></span>
+			</div>
+		</div>
+		<div class="info-panel">
+			<div class="info-title">
+				<h4>产品详情</h4>
+				<div class="info-detail">
+					<ul>
+						<li>类型：<span><{$data.category}></span></li>
+						<li>产品定位：<span><{$data.keywords}></span></li>
+						<li>完成周期：<span><{$data.days}></span></li>
+						<li>产品特点：<span><{$data.description}></span></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		<div class="info-content">
+			<div class="info-title">
+				<h4>详细介绍</h4>
+			</div>
+			<div class="content">
+				<{$data.content}>
+			</div>
+		</div>
+	</div>
+
+<include file="Public/footer" />
+
+</body>
+</html>

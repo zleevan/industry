@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<title>
+	工业设计
+	</title>
+	<meta http-equiv="x-ua-compatible" content="ie=11" />
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+	<meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+	<meta name="Design Corp" content="Perfect DNB" />
+	<meta name="robots" content="all" />
+	<meta name="Keywords" content="工业设计" />
+	<meta name="Description" content="工业设计" />
+	
+	<include file="Public/head" />
+
+
+</head>
+
+<body style="background: #F9F9F9">
+<include file="Public/header" />
+
+	<div class="bg-wrap mt10">
+		<div class="need-left">
+			<div class="article-hd bg-white">
+				<ol id="branchLish" class="breadcrumb bg-white fl no-margin">
+					<li><a href="<{:U('Home/Article/index/list/0')}>">所有分类</a></li>
+				</ol>
+				<form id="select-form" method="get" action="<{:U('Home/Need//index')}>">
+					<select id="select-article" class="article-select fr">
+						<option value="0">所有分类</option>
+						<volist name="cateList" id="cList">
+							<option value="<{$cList.id}>"><{$cList.name}></option>
+						</volist>	
+					</select>
+					<input type="hidden" id="list" name="list" value="0" />
+				<form>
+			</div>
+			<volist name="needList" id="nList">
+			<div class="list-group list-group-mb">
+				<div class="list-group-item pt15">
+					<h4><a href="<{:U('Home/Need/theme/id/'.$nList[id])}>"><{$nList.title}></a><small class="pull-right">发布时间：2016-04-11</small></h4>
+					<p class="pt10">
+						<span>发布者：<{$nList.user}> </span>
+						<span class="pl20">浏览:<{$nList.read}></span>
+						<small class="pull-right">
+							<span class="badge bg-danger">评论:<{$nList.cmt}></span>
+						</small>
+					</p>
+				</div>
+			</div>
+			</volist>
+            <nav class="text-center">
+				<ul class="pagination">
+					<{$page}>
+				</ul>
+			</nav>
+		</div>
+		<div class="need-right">
+			<a href="<{:U('Home/Need/publish')}>" class="upload-app">
+				<span class="glyphicon glyphicon-hand-up"></span>
+					发布需求
+			</a>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="glyphicon glyphicon-pencil"></span>
+					热门设计<a href="#" class="text-muted fr">>></a>
+				</div>
+				<ul class="list-group">
+					<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">电热开水瓶设计</a></li>
+					<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">婴儿冲奶机设计开发</a></li>
+					<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">超强吸力吸尘器</a></li>
+					<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">亨博高端电商爆款电烧烤炉</a></li>
+					<li class="list-group-list"><a href="<{:U('Home/Article/theme/id/'.$hList[read_articleid])}>" class="text-muted">高档蒸汽挂烫机</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<include file="Public/footer" />
+	<script>
+	$(function(){
+		var selectid = "<{$selectid}>";
+		if(selectid!='0'){
+		   var selectText= $("#select-article  option[value='"+selectid+"']").text();
+			$("#branchLish").append("<li class='active'>"+selectText+"</li>");
+			$("#select-article  option[value='"+selectid+"']").attr("selected", "selected"); 	
+		}
+	});
+	$("#select-form").change(function(){
+		var selectValue = $("#select-article").val();
+		$("#list").val(selectValue);
+		$(this).submit();
+	});
+	</script>
+
+</body>
+</html>

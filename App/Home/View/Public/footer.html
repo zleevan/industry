@@ -1,0 +1,229 @@
+ 
+	<div class="footer">
+
+        <div class="footer-area">
+            <table width="960" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="150" valign="top">
+                        <table width="161" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="161" height="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="45" valign="top">
+                                    <span class="footer-title">销售监管</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="28">
+                                    <a href="?" target="_blank" class="a_7a7879_14_yh">
+                                        国家工商总局销售监管局</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="28">
+                                    <a href="?" target="_blank" class="a_7a7879_14_yh">商务部管理</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="28">
+                                    <a href="?" target="_blank" class="a_7a7879_14_yh">
+                                        信息披露</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="57" align="center" valign="top">
+                        <div class="footer-line"></div>
+                    </td>
+                    <td width="140" valign="top">
+                        <table width="140" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td height="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="45" align="center" valign="top">
+                                    <span class="footer-title">快捷通道</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="28" align="center">
+                                    <a href="?" target="_blank" class="a_7a7879_14_yh">网站报障</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="28" align="center">
+                                    <a href="?" target="_blank" class="a_7a7879_14_yh">
+                                        保险查询</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="28" align="center">
+                                    <a href="?" target="_blank" class="a_7a7879_14_yh">快递查询</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="74" align="center" valign="top">
+                        <div class="footer-line"></div>
+                    </td>
+                    <td valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0" align="left">
+                            <tr>
+                                <td height="10">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="45" align="left" valign="top" class="footer-txt">
+                                    <span class="footer-title">联系方式</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="390" height="40" align="left" class="footer-txt">
+                                    <div class="footer-phone">
+                                        <div class="footer-phone-left">
+                                            客服热线：</div>
+                                        <div class="footer-phone-right">
+                                            400 870 1828</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="40px" align="left" class="footer-txt">
+                                    <span id="Foot1_Label_copyrighttime">2016</span>
+                                    工业设计（中国）有限公司版权所有，未经许可不得转载或链接。<a href="?" target="_blank"
+                                        class="a_7a7879_14">粤ICP备11037219号</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+ 	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/js/layer.js"></script>
+	
+	<script>	
+	
+	
+		//退出
+		$("#header-quit").click(function(){
+			$.post("<{:U('LoginReg/quit')}>",function(data){
+					location.reload();
+			});
+		});
+	
+	
+	
+		//注册
+		$('#ul-right-reg').on('click',function(){
+			layer.open({
+			  type: 1,
+			  title:'注册',
+			  skin: 'layui-layer-rim', //加上边框
+			  area: ['420px', '530px'], //宽高
+			  content: '<div class="register-content"><form id="register-form"><div class="input-group mt30"><span class="input-group-addon" id="basic-addon1">用户名</span> <input type="text" class="form-control" id="reg-user" name="user" placeholder="5-20字节" aria-describedby="basic-addon1" maxlength="20"></div><div class="input-group"><span class="input-group-addon" id="basic-addon2">密码</span> <input type="password" class="form-control" id="reg-password" name="password" placeholder="5-16个字节" aria-describedby="basic-addon1" maxlength="16"></div><div class="input-group"><span class="input-group-addon" id="basic-addon3">确认密码</span> <input type="password" class="form-control" id="reg-cpassword" name="cpassword" placeholder="password" aria-describedby="basic-addon1" maxlength="16"></div><div class="input-group"><span class="input-group-addon" id="basic-addon1">昵称</span> <input type="text" class="form-control" id="reg-name" name="name" placeholder="4-8字节" aria-describedby="basic-addon1" maxlength="20"></div><div class="input-group"><span class="input-group-addon" id="basic-addon4">手机号码</span> <input type="text" class="form-control" id="reg-mobile" name="mobile" placeholder="mobile" aria-describedby="basic-addon1" maxlength="11"></div><div class="input-group"><span class="input-group-addon" id="basic-addon5">电子邮箱</span> <input type="email" class="form-control" id="reg-email" name="email" placeholder="email" aria-describedby="basic-addon1"></div><div class="input-group mb30"><span class="input-group-addon" id="basic-addon6">验证码</span> <input type="text" class="form-control form-control-verify" id="reg-verify" name="verify" placeholder="验证码" aria-describedby="basic-addon1"> <img src="<{:U("LoginReg/verify")}>" id="reg-imgverify" title="看不清点刷新" onclick="this.src = \'<{:U("LoginReg/verify")}>?\'+new Date().getTime()"></div><div class="input-group"><button type="reset" id="reg-reset" class="btn btn-default mr15">重置</button> <button type="button" class="btn btn-default" id="reg-checkform">提交</button></div></form></div>',
+			});
+			$('#reg-checkform').on('click',function(){
+				var account = $("#reg-user").val();
+				var password = $("#reg-password").val();
+				var cpassword = $("#reg-cpassword").val();
+				var name = $("#reg-name").val();
+				var mobile = $("#reg-mobile").val();
+				var email = $("#reg-email").val();
+				var verify = $("#reg-verify").val();
+				$.post("<{:U('LoginReg/register')}>" , {
+					account:account,
+					password:password,
+					cpassword:cpassword,
+					name:name,
+					mobile:mobile,
+					email:email,
+					verify:verify,
+					 } , 
+					function(data){
+						switch(data){
+						case 1: layer.tips("输入正确账号","#reg-user");break
+						case 2: layer.tips("账户已存在","#reg-user");break;
+						case 3: layer.tips("输入正确密码","#reg-password");break;
+						case 4: layer.tips("密码不一致","#reg-cpassword");break;
+						case 5: layer.tips("请输入正确昵称","#reg-name");break;
+						case 6: layer.tips("输入正确手机号码","#reg-mobile");break;
+						case 7: layer.tips("输入正确邮箱","#reg-email");break;
+						case 8: layer.tips("验证码错误","#reg-verify");break;
+						case 9: layer.alert('注册成功,请点击跳转',{icon: 1,},function(){location.reload			();});break;
+						default:layer.tips("出现错误，请重新注册");break;
+						}
+						
+						
+							
+				});	
+
+				$("#reg-imgverify").trigger("click");
+				
+
+
+			});
+			
+			$('#reg-reset').on('click',function(){
+			$("#reg-imgverify").trigger("click");
+			});
+		
+
+		});
+		
+		//登陆
+		$('#ul-right-login').on('click',function(){
+		  layer.open({
+		  type: 1,
+		  title:'登陆',
+		  skin: 'layui-layer-rim', //加上边框
+		  area: ['400px', '270px'], //宽高
+		  content: '<div class="login-content"><form id="login-form"><div class="input-group mt30"><span class="input-group-addon" id="basic-addon-login1">用户名</span> <input type="text" class="form-control" id="login-user" placeholder="Username" aria-describedby="basic-addon1"></div><div class="input-group"><span class="input-group-addon" id="basic-addon-login2">密码</span> <input type="password" class="form-control" id="login-password" placeholder="password" aria-describedby="basic-addon1"></div><div class="input-group"><label class="f16 remenber">记住我<input type="checkbox" id="remenber" value="1"></label><button type="button" class="btn btn-default ml20 " id="login-checkform">登录</button></div></form></div>',
+		  });
+			$('#login-checkform').on('click',function(){
+				var account = $("#login-user").val();
+				var password = $("#login-password").val();
+				var remenber = $("#remenber").val();
+				$.post("<{:U('LoginReg/login')}>" , {
+					account:account,
+					password:password,
+					remenber:remenber,
+					 } , 
+					function(data){					
+							switch(data){
+							case 1: layer.tips("账号或密码错误","#login-user");break;
+							case 2: location.reload();break;
+							default:layer.tips("出现不明错误，请联系工作人员");break;
+							}
+			
+				});				
+			$('#login-form')[0].reset();	
+			$("#login-imgverify").trigger("click");
+		
+			});
+	
+		});
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		$('.close').on('click',function(){
+			$(":reset").trigger("click");
+			$("#login-imgverify").trigger("click");
+			$("#reg-imgverify").trigger("click");
+		});
+	
+		
+  </script>

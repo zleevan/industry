@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<title>
+	工业设计
+	</title>
+	<meta http-equiv="x-ua-compatible" content="ie=11" />
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+	<meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+	<meta name="Design Corp" content="Perfect DNB" />
+	<meta name="robots" content="all" />
+	<meta name="Keywords" content="工业设计" />
+	<meta name="Description" content="工业设计" />
+	
+	<include file="Public/head" />
+
+
+</head>
+
+<body>
+<include file="Public/header" />
+
+	<a href="<{$flash.url}>"   target="_blank"><img width="100%"src="__ROOT__<{$flash.pic}>" class="img-responsive" /></a>
+
+	<!--设计作品-->
+	<div class="top-designer">
+		<div class="container">
+			<div class="top-title">
+				<h2>优秀设计作品</h2>
+			</div>
+			<p class="know-more-dsg"><a href="__MODULE__/Design/index" target="_blank">了解更多设计作品</a></p>
+			<div class="designer-wrap" id="J-designer-wrap">
+				<ul class="designer-list" id="J-designer-list">
+					<foreach name="topsix" item="val" key='k'>
+						<li>
+							<div>
+								<span class="serial-number"><{$k+1}>.</span>
+								<span class="img-wrap">
+									<a href="<{:U('Home/Design/info/aid/'.$val['aid'])}>" >
+										<img src="__ROOT__<{$val.thumbnail}>" alt="<{$val.title}>">
+										<p><{$val.title}></p>
+									</a>
+								</span>
+							</div>
+						</li>
+					</foreach>
+						<for start="1" end="7-$length" name="loop">
+							<li>
+								<div>
+									<span class="serial-number"><{$length+$loop}>.</span>
+									<span class="img-wrap">
+										<a href="javascript:void(0)" >
+											<img src="__PUBLIC__/images/kongque.png" alt="此位置空缺">
+											<p>空缺位置</p>
+										</a>
+									</span>
+								</div>
+							</li>
+						</for>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+    <!--微信号-->
+	<div class="wchat">
+        <div class="ztlistarea" >
+            <dl >
+                <dt>
+                 
+                     <div class="ztlistarea-left">
+                            <img src="__PUBLIC__/images/2dbcode.jpg" width="100" height="100" /></div>
+                        <div class="ztlistarea-right">
+                            <div class="ztlistarea-right-titie">
+                                微信服务号</div>
+                            <div class="ztlistarea-right-introce">
+                                向公司顾客提供业务相关的服务。</div>
+                        </div>
+                        <div class="clear">
+                        </div>
+               
+                </dt>
+            </dl>
+            <dl style="margin-right: 40px;">
+                <dt>
+                    
+                        <div class="ztlistarea-left">
+                            <img src="__PUBLIC__/images/2dbcode.jpg" width="100" height="100" /></div>
+                        <div class="ztlistarea-right">
+                            <div class="ztlistarea-right-titie">
+                                工业设计</div>
+                            <div class="ztlistarea-right-introce">
+                                设计有限公司官方公众号之一，每天为您推送最权威、最新鲜的设计资讯，传播企业文化品牌。</div>
+                        </div>
+                        <div class="clear">
+                        </div>
+             
+                </dt>
+            </dl>
+            <dl>
+                <dt>
+                   
+                        <div class="ztlistarea-left">
+                            <img src="__PUBLIC__/images/2dbcode.jpg" width="100" height="100" /></div>
+                        <div class="ztlistarea-right">
+                            <div class="ztlistarea-right-titie">
+                                设计快信</div>
+                            <div class="ztlistarea-right-introce">
+                                报道市场动态，了解公司产品资讯。精彩内容，陆续发放，敬请期待。</div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                 
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <!--底部版权-->
+  
+<include file="Public/footer" />
+
+    
+</body>
+</html>

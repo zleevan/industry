@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<title>
+	工业设计
+	</title>
+	<meta http-equiv="x-ua-compatible" content="ie=11" />
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+	<meta content="IE=11.0000" http-equiv="X-UA-Compatible" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8" />
+	<meta name="Design Corp" content="Perfect DNB" />
+	<meta name="robots" content="all" />
+	<meta name="Keywords" content="工业设计" />
+	<meta name="Description" content="工业设计" />
+	
+	<include file="Public/head" />
+	
+
+</head>
+
+<body>
+<include file="Public/header" />
+	<div class="container mt10">
+		<div class="row mt10">
+			<div class="person">		
+				<div class="person-intro">
+					<dl class="preson-photo">
+						<dt>
+							<div class="avatar">
+								<img src="__PUBLIC__/images/companylogo.jpg" alt="头像" width="140px" />  		
+							</div>
+						</dt>
+						<dd class="article-num">
+							<b><{$need}></b>
+							需求
+						</dd>
+						<dd class="bbs-num">
+							<b><{$cmt}></b>
+							评论
+						</dd>
+					</dl>
+					<dl class="person-info">
+						<dt class="nick-name">
+							<a id="person-edit"><span class="f16 fr glyphicon glyphicon-edit mr10"></span></a>
+						</dt>
+						<dd class="person-detail">
+								<span>账号：<{$account}></span>
+								<span>|</span>
+							<empty name="name">
+								<span>昵称：<span class="nodetail">未填写</span></span>
+							<else />
+								<span>昵称：<{$name}></span>
+							</empty>
+						</dd>
+						<dd class="person-detail">
+							<empty name="email">
+								<span>邮箱：<span class="nodetail">未填写</span></span>
+							<else />
+								<span>邮箱：<{$email}></span>
+							</empty>
+						</dd>
+						<dd class="person-contact">
+							<h5>个人简介</h5>
+							<empty name="brief">
+								该家伙很懒，什么也没留下！
+							<else />
+								<span><{$brief}></span>
+							</empty>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="col-sm-8 no-padding mt10">
+				<div class="person-section">
+					<div class="person-tab">
+						<a class="pactive" href="javascript:;">我的需求</a>
+					</div>
+					<div class="tab-content article-list">
+						<div class="tab-pane active" id="tab-article">
+							<div class="list-group">
+								<volist name="needList" id="nList">
+								<div class="list-group list-group-mb">
+									<div class="list-group-item pt15 no-border">
+										<h4><a href="<{:U('Home/Need/theme/id/'.$nList[id])}>"><{$nList.title}></a><small class="pull-right">发布时间：2016-04-11</small></h4>
+										<p class="pt10">
+											<span>发布者：<{$nList.user}> </span>
+											<span class="pl20">浏览:<{$nList.read}></span>
+											<small class="pull-right">
+												<span class="badge bg-danger">评论:<{$nList.cmt}></span>
+											</small>
+										</p>
+									</div>
+								</div>
+								</volist>
+								<nav class="text-center">
+									<ul class="pagination">
+										<{$page}>
+									</ul>
+								</nav>							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 no-padding">
+				<div class="person-new">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-pencil"></span>
+							热门推荐<a href="#" class="text-muted fr">>></a>
+						</div>
+						<ul class="list-group">
+							<li class="list-group-list"><a href="" class="text-muted">声波牙刷</a></li>
+							<li class="list-group-list"><a href="" class="text-muted">超强吸力吸尘器</a></li>
+							<li class="list-group-list"><a href="" class="text-muted">爆款电烧烤炉</a></li>
+							<li class="list-group-list"><a href="" class="text-muted">电热开水瓶设计</a></li>
+							<li class="list-group-list"><a href="" class="text-muted">三防移动电源</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wchat">
+        <div class="ztlistarea" >
+            <dl >
+                <dt>
+                    <div class="ztlistarea-left">
+                        <img src="__PUBLIC__/images/logo.jpg" width="100" height="100" />
+					</div>
+                    <div class="ztlistarea-right">
+						<div class="ztlistarea-right-titie">
+							微信服务号
+						</div>
+						<div class="ztlistarea-right-introce">
+							向公司顾客提供业务相关的服务。
+						</div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </dt>
+            </dl>
+			<dl style="margin-right: 40px;">
+                <dt>
+                    
+                        <div class="ztlistarea-left">
+                            <img src="__PUBLIC__/images/logo.jpg" width="100" height="100" /></div>
+                        <div class="ztlistarea-right">
+                            <div class="ztlistarea-right-titie">
+                                工业设计</div>
+                            <div class="ztlistarea-right-introce">
+                                设计有限公司官方公众号之一，每天为您推送最权威、最新鲜的设计资讯，传播企业文化品牌。</div>
+                        </div>
+                        <div class="clear">
+                        </div>
+             
+                </dt>
+            </dl>
+            <dl>
+                <dt>
+                   
+                        <div class="ztlistarea-left">
+                            <img src="__PUBLIC__/images/logo.jpg" width="100" height="100" /></div>
+                        <div class="ztlistarea-right">
+                            <div class="ztlistarea-right-titie">
+                                设计快信</div>
+                            <div class="ztlistarea-right-introce">
+                                报道市场动态，了解公司产品资讯。精彩内容，陆续发放，敬请期待。</div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                 
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <!--底部版权-->
+  
+<include file="Public/footer" />
+<script>
+		$(function(){
+			$("#navlist").children().removeClass("active");
+		})
+		$("#person-edit").click(function(){
+			layer.open({
+				type: 1, 
+				title:'个人信息',
+				skin: 'my-btn layui-layer-rim', //加上边框
+				area: ['460px', '320px'], //宽高
+				content:'<div class="regBox"><form id="infoFrom"class="form-horizontal"method="post"class="m10"role="form"><div class="form-group"><label for="infoName"class="col-sm-2 control-label">姓名</label><div class="col-sm-4"><input type="text"class="form-control"id="infoName"maxlength="8"placeholder="请输入姓名"></div></div><div class="form-group"><label for="infoEmail"class="col-sm-2 control-label">邮箱</label><div class="col-sm-10"><input type="text"class="form-control"id="infoEmail"placeholder="请输入邮箱"></div></div><div class="form-group"><label for="infoIntro"class="col-sm-2  control-label">简介</label><div class="col-sm-10"><textarea class="form-control"id="infoBrief"rows="3"></textarea></div></div></form></div>',
+				btn: ['确认', '取消'],
+				yes: function(){
+					$.post("<{:U('Account/update')}>",
+						{
+						name : $("#infoName").val(),
+						email : $("#infoEmail").val(),
+						brief :	$("#infoBrief").val()
+						},
+						function(flag){
+							if(flag){
+								location.reload();
+							}else{
+								layer.msg('修改失败！');
+							}
+						}
+					)
+				}
+			})
+			$.post("<{:U('Account/getInfo')}>",function(data){
+				if(data !== 0){
+					$("#infoName").val(data['name']);
+					$("#infoEmail").val(data['email']);
+					$("#infoBrief").val(data['brief']);
+				}
+			})
+		})
+	</script>
+    
+</body>
+</html>

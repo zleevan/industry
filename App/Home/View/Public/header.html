@@ -1,0 +1,58 @@
+<div class="header">
+	<div class="header-top">
+		<div class="header-top-logo">
+			<a href="?">
+				<img src="__PUBLIC__/images/truelogo.jpg" alt="" class="header-top-logo" /></a>
+		</div>
+		<div class="header-top-right">
+			<div class="header-top-right-ul">
+										
+				<empty name="_SESSION['account']">
+					<ul>
+						<li class="header-top-right-ul-top"><a href="#foo" class="ul-right-reg " data-toggle="modal" id="ul-right-reg" data-target="#regModal">注册</a><span class="header-top-right-ul-top-span">/</span>
+						<a class="ul-right-login"  id ="ul-right-login" data-toggle="modal" data-target="#loginModal">登录</a></li>
+						<li class="header-top-right-ul-bottom"><a href="<{:U('Home/Need/publish')}>" class="pub">发布设计需求</a></li>
+					</ul>
+				<else />
+					
+					
+					
+					<div  class="btn-group pub-design">
+					  <button type="button" class="header-top-right-ul-bottom btn btn-default dropdown-toggle glyphicon header-top-right-ul-bottom-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="pub-design-name"><{$_SESSION['name']}></span><span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu">
+						<li ><a href="<{:U('Home/Account/index')}>">个人中心</a></li>
+						<li id="header-quit" ><a href="javascript:;" class="dropdown-menu-line">退出</a></li>
+					  </ul>
+					</div>
+					
+					<div class="bottom-need">
+						<a href="<{:U('Home/Need/publish')}>" class="header-top-right-ul-bottom-need">发布设计需求</a>
+					</div>
+					
+				</empty>
+			</div>
+		</div>
+	</div>
+</div>
+				
+	<div class="phd">
+		<div class="top_nav">
+			<ul>
+				<li class="clearfix-li"><a class="clearfix-li-a" href="<{:U('Home/Index/index')}>"> 首 页</a></li>				
+				<li class="clearfix-li"><a class="clearfix-li-a" href="<{:U('Home/Design/index')}>">设计作品</a></li>
+				<li class="clearfix-li"><a class="clearfix-li-a" href="<{:U('Home/Need/index')}>">项目需求</a></li>
+				<li class="clearfix-li"><a class="clearfix-li-a" href="<{:U('Home/Company/info')}>">公司介绍</a></li>
+				<li class="clearfix-li"><a class="clearfix-li-a" href="<{:U('Home/Industry/index')}>">行业动态</a></li>		
+			</ul>
+		</div>
+
+	</div>
+						
+
+	
+	
+	
+
+    <!--网页头部代码结束-->
